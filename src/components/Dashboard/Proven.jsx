@@ -1,46 +1,94 @@
-import React from "react";
+// src/components/ImageSlider.jsx
+import React, { useState, useEffect } from "react";
 
 const Proven = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const slides = [
+    {
+      id: 1,
+      title: "Prevent Violations Of Valid Tracking Rate (VTR)",
+      description: "With Shipped via Platform and Fulfilled by TikTok you stay protected against VTR violations",
+      buttonText: "Stay Protected Now",
+      bgColor: "from-blue-50 to-purple-50"
+    },
+    {
+      id: 2,
+      title: "Exclusive Offer: Unlock Our Lowest Shipping Rates Of £2.14 (VAT Excl.) This October",
+      description: "Switch on 1st October to Shipped via Platform to unlock the lowest rate tier in the month of October for parcels under 15kg",
+      buttonText: "Unlock Lowest Shipping Rates",
+      bgColor: "from-green-50 to-blue-50"
+    },
+    {
+      id: 3,
+      title: "up to £2,000 in Promote Coupons or Amazon vouchers",
+      description: "Start inviting sellers",
+      buttonText: "Start inviting sellers",
+      bgColor: "from-orange-50 to-red-50"
+    }
+  ];
+
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
   return (
-    <section className="dashboard-row flex justify-center gap-4 mb-6">
-      <div className="strategies w-[1040px]">
-        {/* Header */}
-        <div
-          id="homepage.grow-business-title"
-          className="w-full py-4 bg-[#f8f9fa] sticky top-[60px] z-[100] mt-0 mb-2"
-        >
-          <div className="w-full flex flex-col items-start">
-            <span className="text-lg font-semibold text-gray-900 mb-2">
-              Proven strategies to grow your business
-            </span>
-            <p className="text-[#0000008c] text-xs mb-4 font-medium tracking-tight">
-              Looking for guidance on growing your shop? Explore a range of strategies
-              and customized suggestions just for you.
-            </p>
+    <section className="my-6">
+      <h2 className="text-lg font-semibold text-gray-900 mb-2">Featured Promotions</h2>
+      <p className="text-gray-500 text-xs mb-4 font-medium tracking-tight">
+        Discover exclusive offers and protection services for your business.
+      </p>
+      
+      <div className="bg-white rounded-lg border border-gray-200 relative">
+        {/* Slider Container */}
+        <div className="relative overflow-hidden rounded-lg">
+          {/* Slides */}
+          <div 
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {slides.map((slide) => (
+              <div
+                key={slide.id}
+                className="w-full flex-shrink-0"
+              >
+                <div className="bg-white rounded-lg cursor-pointer">
+                  {/* Content Container */}
+                  <div className={`w-full h-32 bg-gradient-to-br ${slide.bgColor} rounded-lg p-4 flex flex-col justify-between`}>
+                    <div className="flex-1">
+                      <div className="flex justify-between">
+                      <h3 className="text-[26px] font-semibold text-[#fe2c55] mb-1 line-clamp-2 leading-tight">
+                        {slide.title}
+                      </h3>
+                      <span className="text-gray-500">X</span>
+                        </div>
+                      <p className="text-[14px] text-gray-600 line-clamp-2 leading-relaxed">
+                        {slide.description}
+                      </p>
+                    </div>
+                    
+                    {/* Exact Button Styling - ONLY THIS CHANGED */}
+                    <button className="bg-transparent border border-[#fe2c55] text-[#fe2c55] px-4 py-2 rounded-md text-[12px] font-semibold  w-fit">
+                      {slide.buttonText}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
 
-        {/* Hero Section */}
-        <div className="relative w-[1040px] h-[180px] bg-white rounded-lg">
-          <div className="flex flex-col gap-4 text-white w-[550px] absolute top-[60px] left-[44px]">
-            <div className="w-full h-[36px] rounded-md bg-[#e5e7eb]"></div>
-            <div className="w-full h-[24px] rounded-md bg-[#e5e7eb]"></div>
-          </div>
-          <div className="w-[300px] h-[100px] absolute right-[82px] top-[40px] rounded-md bg-[#e5e7eb]"></div>
+          {/* Slide Indicators - Centered at bottom */}
+        
         </div>
-
-        {/* Strategy List */}
-        <article className="bg-white rounded-lg shadow-sm mt-8 p-6">
-          <div className="h-[32px] w-[520px] mb-6 bg-[#f0f0f0] rounded-md animate-pulse"></div>
-          <ul className="grid grid-cols-2 gap-4 list-none p-0 m-0">
-            <li>
-              <div className="h-[100px] bg-[#f0f0f0] rounded-md animate-pulse"></div>
-            </li>
-            <li>
-              <div className="h-[100px] bg-[#f0f0f0] rounded-md animate-pulse"></div>
-            </li>
-          </ul>
-        </article>
       </div>
     </section>
   );
