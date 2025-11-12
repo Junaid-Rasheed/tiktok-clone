@@ -50,6 +50,8 @@ const Sidebar = () => {
           dropdownItems: [
             { name: "Manage orders", path: "/order" },
             { name: "Manage returns", path: "/orders/returns" },
+               { name: "Shipping settings", path: "/order/shippingsetting" },
+            { name: "Fulfilment Settings", path: "/orders/fulfilmentsetting" },
           ],
         },
         {
@@ -57,8 +59,12 @@ const Sidebar = () => {
           icon: Package,
           size: 14,
           dropdownItems: [
-            { name: "All products", path: "/products/all" },
-            { name: "Collections", path: "/products/collections" },
+            { name: "Add products", path: "/products" },
+            { name: "Manage products", path: "/products/manage" },
+              { name: "Product ratings", path: "/products/rating" },
+            { name: "Product Bundles", path: "/products/bundle" },
+               { name: "Product opportunities", path: "/products/opportunity" },
+            { name: "Sales accelerator", path: "/products/accelerator" },
           ],
         },
         {

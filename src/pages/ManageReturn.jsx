@@ -34,7 +34,7 @@ function ManageReturn() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen  ">
       <div className="max-w-7xl mx-auto px-6 py-8">
         {/* Alert */}
         {alertVisible && (
@@ -93,7 +93,7 @@ function ManageReturn() {
         </div>
 
         {/* Summary Cards */}
-        <div className="w-full bg-[#f9f9f9] py-4">
+        <div className="w-full  py-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 bg-white rounded-md shadow-sm">
             {summaryCards.map((card, index) => (
               <div
@@ -115,10 +115,10 @@ function ManageReturn() {
         </div>
 
         {/* Tabs Section */}
-        <div className="bg-[#fafafa] min-h-screen py-6">
+        <div className="bg-[#f5f5f5] min-h-screen py-6">
           <div className="bg-white rounded-lg  ">
             {/* Tabs */}
-            <div className="flex border-b border-gray-200 bg-[#f9fafb] text-sm text-gray-700 px-4">
+            <div className="flex border-b border-gray-200 bg-[#f5f5f5] text-sm text-gray-700 px-4">
               {tabs.map((tab) => (
                 <button
                   key={tab.key}
