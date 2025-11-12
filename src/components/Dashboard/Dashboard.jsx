@@ -13,8 +13,8 @@ const Dashboard = () => {
     <div className="p-6 mx-52">
       <Lastweek />
       <Todolist />
-      <Conversion />
       <Proven />
+      <Conversion />
       <TikTokShopSuccessPath />
       <Sales />
     </div>

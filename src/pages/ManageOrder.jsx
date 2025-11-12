@@ -12,7 +12,7 @@ import {
   Filter,
 } from "lucide-react";
 
-function Order() {
+function ManageOrder() {
   const [activeTab, setActiveTab] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(20);
@@ -199,10 +199,17 @@ function Order() {
           </div>
           <div className="flex items-center gap-6 overflow-x-auto py-2">
             {[...actionItems, ...descriptionItems].map((item, index) => (
-              <div key={index} className="flex flex-col  px-4 ">
-                <div className="text-sm items-center">{item.label}</div>
-                <div className="text-md font-semibold mt-2 items-start">
-                  {item.count}
+              <div
+                key={index}
+                className="flex flex-col px-4 hover:bg-[#f5f5f5] hover:rounded-sm hover:cursor-pointer group"
+              >
+                <div className="text-[12px]">{item.label}</div>
+
+                <div className="flex items-center gap-2 relative">
+                  <div className="text-md font-semibold">{item.count}</div>
+                  <div className="opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 text-sm text-[#009995] cursor-pointer">
+                    View
+                  </div>
                 </div>
               </div>
             ))}
@@ -224,8 +231,8 @@ function Order() {
                   onClick={() => setActiveTab(tab)}
                   className={`py-4 cursor-pointer text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
                     activeTab === tab
-                      ? "border-gray-900 text-gray-900"
-                      : "border-transparent text-gray-600 hover:text-gray-900"
+                      ? "border-[#009995] "
+                      : "border-transparent  "
                   }`}
                 >
                   {tab}
@@ -237,13 +244,13 @@ function Order() {
           <div className="py-6">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 px-6">
               <div className="flex items-center gap-4">
-                <button className="flex items-center gap-2 px-4 py-[7px] rounded-md  hover:bg-[#ebebeb] text-sm bg-[#e8e8e8] cursor-pointer leading-tighter">
+                <button className="flex items-center gap-2 px-4 py-[7px] rounded-sm  hover:bg-[#ebebeb] text-sm bg-[#f2f2f2] cursor-pointer leading-tighter font-bold">
                   <span className="text-md">
                     <Settings2 className="w-4 h-4" />
                   </span>
                   Filter
                 </button>
-                <span className="text-sm text-gray-600 leading-tighter">
+                <span className="text-[sm] text-gray-600 leading-tighter">
                   Found 56 orders
                 </span>
               </div>
@@ -384,4 +391,4 @@ function Order() {
   );
 }
 
-export default Order;
+export default ManageOrder;

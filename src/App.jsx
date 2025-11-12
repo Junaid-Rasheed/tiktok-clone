@@ -1,13 +1,14 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Header from './components/Header'
-import Sidebar from './components/Sidebar'
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
 
-import Home from './pages/Home'
-import Order from './pages/Order'
+import Home from "./pages/Home";
+import ManageOrder from "./pages/ManageOrder";
 
-import './index.css'
+import "./index.css";
+import ManageReturn from "./pages/ManageReturn";
 
 function App() {
   return (
@@ -23,19 +24,18 @@ function App() {
 
           {/* Main content */}
           {/* <div className="flex-1 min-w-0 mt-[58px] p-6 bg-[url('/background-wide.svg')] bg-auto bg-no-repeat"> */}
-                      <div className="flex-1 min-w-0 mt-[58px] p-6 ">
-
+          <div className="flex-1 min-w-0 mt-[58px] p-6 ">
             {/* ROUTES */}
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/order" element={<Order />} />
+              <Route path="/order" element={<ManageOrder />} />
+              <Route path="/orders/returns" element={<ManageReturn />} />
             </Routes>
-
           </div>
         </div>
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

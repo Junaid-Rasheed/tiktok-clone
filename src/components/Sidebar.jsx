@@ -38,7 +38,7 @@ const Sidebar = () => {
 
   const menuSections = [
     {
-      items: [{ name: "Home", icon: Home, size: 14, path: "/" }],
+      items: [{ name: "Homepage", icon: Home, size: 14, path: "/" }],
     },
     {
       items: [
