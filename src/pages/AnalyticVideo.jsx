@@ -111,7 +111,7 @@ export function AnalyticVideo() {
   const [endDate, setEndDate] = useState("");
 
   return (
-    <div className="px-6 pt-6 mx-52">
+    <div className="px-6 mx-52">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl font-semibold text-gray-900 mb-2">Video</h1>

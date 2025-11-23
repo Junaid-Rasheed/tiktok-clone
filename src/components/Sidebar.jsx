@@ -41,6 +41,17 @@ const Sidebar = () => {
     },
     {
       items: [
+             {
+          name: "Collaboration",
+          icon: ShoppingBag,
+          size: 14,
+          path: "/collaboration",
+          dropdownItems: [
+            { name: "Target collaboration", path: "/collaboration" },
+            { name: "Open collaboration", path: "/collaboration/opencollab" },
+          
+          ],
+        },
         {
           name: "Orders",
           icon: ShoppingBag,
