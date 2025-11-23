@@ -100,7 +100,7 @@ const Sidebar = () => {
             { name: "Discounts", path: "/marketing/discounts" },
           ],
         },
-        { name: "Affiliate", icon: Users, size: 14 },
+        { name: "Affiliate", icon: Users, size: 14,path: "/affiliateorder" },
         { name: "LIVE & video", icon: Video, size: 14 },
         { name: "Growth", icon: Sprout, size: 14 },
         { name: "Apps & partners", icon: Puzzle, size: 14 },
@@ -111,7 +111,6 @@ const Sidebar = () => {
           size: 14,
           path: "/samplerequest",
         },
-        { name: "Apps & partners", icon: Puzzle, size: 14 },
       ],
     },
     {
