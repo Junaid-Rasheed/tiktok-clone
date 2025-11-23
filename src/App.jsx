@@ -9,6 +9,9 @@ import ManageOrder from "./pages/ManageOrder";
 
 import "./index.css";
 import ManageReturn from "./pages/ManageReturn";
+import { AnalyticVideo } from "./pages/AnalyticVideo";
+import Performance from "./pages/Perfomance";
+import SampleRequest from "./pages/SampleRequest";
 
 function App() {
   return (
@@ -30,6 +33,13 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/order" element={<ManageOrder />} />
               <Route path="/orders/returns" element={<ManageReturn />} />
+              <Route
+                path="/perfomance/analyticvideo"
+                element={<AnalyticVideo />}
+              />
+              <Route path="/perfomance" element={<Performance />} />
+                            <Route path="/samplerequest" element={<SampleRequest />} />
+
             </Routes>
           </div>
         </div>

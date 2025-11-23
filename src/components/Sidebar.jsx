@@ -24,17 +24,16 @@ const Sidebar = () => {
   const [expandedItems, setExpandedItems] = useState({});
 
   const toggleDropdown = (itemName) => {
-  setExpandedItems((prev) => {
-    // if clicking the same dropdown → toggle normally
-    if (prev[itemName]) {
-      return { [itemName]: false }
-    }
+    setExpandedItems((prev) => {
+      // if clicking the same dropdown → toggle normally
+      if (prev[itemName]) {
+        return { [itemName]: false };
+      }
 
-    // ✅ close all others, open only the clicked one
-    return { [itemName]: true }
-  })
-}
-
+      // ✅ close all others, open only the clicked one
+      return { [itemName]: true };
+    });
+  };
 
   const menuSections = [
     {
@@ -50,7 +49,7 @@ const Sidebar = () => {
           dropdownItems: [
             { name: "Manage orders", path: "/order" },
             { name: "Manage returns", path: "/orders/returns" },
-               { name: "Shipping settings", path: "/order/shippingsetting" },
+            { name: "Shipping settings", path: "/order/shippingsetting" },
             { name: "Fulfilment Settings", path: "/orders/fulfilmentsetting" },
           ],
         },
@@ -61,9 +60,9 @@ const Sidebar = () => {
           dropdownItems: [
             { name: "Add products", path: "/products" },
             { name: "Manage products", path: "/products/manage" },
-              { name: "Product ratings", path: "/products/rating" },
+            { name: "Product ratings", path: "/products/rating" },
             { name: "Product Bundles", path: "/products/bundle" },
-               { name: "Product opportunities", path: "/products/opportunity" },
+            { name: "Product opportunities", path: "/products/opportunity" },
             { name: "Sales accelerator", path: "/products/accelerator" },
           ],
         },
@@ -78,6 +77,7 @@ const Sidebar = () => {
         },
       ],
     },
+
     {
       items: [
         {
@@ -93,11 +93,34 @@ const Sidebar = () => {
         { name: "LIVE & video", icon: Video, size: 14 },
         { name: "Growth", icon: Sprout, size: 14 },
         { name: "Apps & partners", icon: Puzzle, size: 14 },
+        
+        {
+          name: "Sample Request",
+          icon: Home,
+          size: 14,
+          path: "/samplerequest",
+        },
+        { name: "Apps & partners", icon: Puzzle, size: 14 },
       ],
     },
     {
       items: [
-        { name: "Analytics", icon: BarChart3, size: 14 },
+        {
+          name: "Analytics",
+          icon: BarChart3,
+          size: 14,
+          path: "/perfomance",
+
+          dropdownItems: [
+            { name: "Perfomance", path: "/perfomance" },
+            { name: "Sample analytics", path: "/perfomance/returns" },
+            { name: "Product", path: "/perfomance/shippingsetting" },
+            { name: "Collaboration", path: "/perfomance/fulfilmentsetting" },
+            { name: "Creator", path: "/perfomance/shippingsetting" },
+            { name: "Video", path: "/perfomance/analyticvideo" },
+            { name: "Outreach analysis", path: "/perfomance/shippingsetting" },
+          ],
+        },
         { name: "Account health", icon: HeartPulse, size: 14 },
         { name: "Finances", icon: DollarSign, size: 14 },
       ],
